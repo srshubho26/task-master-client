@@ -2,15 +2,15 @@
 
 Task Master is a simple kanban board application. Authenticated users can add, edit and remove task. Besides they can drag and drop and tasks into different container.
 
-##
+<br><br>
 
 ## Live Link: task-master-eb61b.web.app
 
-##
+<br><br>
 
 ## Backend Link: github.com/srshubho26/task-master-server
 
-##
+<br><br>
 
 ## Technologies
 
@@ -20,7 +20,7 @@ Task Master is a simple kanban board application. Authenticated users can add, e
 - Firebase
 - React D&D kit
 
-##
+<br><br>
 
 ## Dependencies
 
@@ -34,7 +34,7 @@ Task Master is a simple kanban board application. Authenticated users can add, e
 - react-icons: ^5.5.0
 - sweetalert: ^2.1.2
 
-##
+<br><br>
 
 ## Dev Dependencies
 
@@ -53,7 +53,7 @@ Task Master is a simple kanban board application. Authenticated users can add, e
 - tailwindcss: ^3.4.17
 - vite: ^6.1.0
 
-##
+<br><br>
 
 ## Installation Stepes
 
