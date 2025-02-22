@@ -12,13 +12,13 @@ body.dark{
 
 @layer utilities{
     .neomorphism-outset{
-        box-shadow: 2px 2px 2px #000,
+        box-shadow: 2px 2px 2px #00000099,
         -2px -2px 2px #fff;
     }
 
     .neomorphism-inset{
-        box-shadow: 2px 2px 2px #000 inset,
+        box-shadow: 2px 2px 2px #00000094 inset,
         -2px -2px 2px #fff inset;
     }
-
 }
+

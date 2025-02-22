@@ -2,14 +2,17 @@ import axios from "axios";
 import swal from "sweetalert";
 
 const withCredentials = axios.create({
-    baseURL: 'https://life-mate-server.vercel.app',
+    baseURL: 'https://task-master-server-mocha.vercel.app',
     withCredentials: true
 });
-withCredentials.interceptors.response.use(null, () => {
-    swal('Oops!', "Something went wrong!", 'error');
-})
 
-const useAxiosWithCredentials = () => {
+// callback is using to get the loading state changing function
+const useAxiosWithCredentials = (callback) => {
+    withCredentials.interceptors.response.use(null, () => {
+        callback && callback(false);
+        swal('Oops!', "Something went wrong!", 'error');
+    })
+
     return withCredentials;
 };
 

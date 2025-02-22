@@ -8,26 +8,22 @@ import Login from "./components/Login/Login";
 const googleAuth = new GoogleAuthProvider();
 
 const Root = () => {
-    const axiosWithCredentials = useAxiosWithCredentials();
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+    const axiosWithCredentials = useAxiosWithCredentials(setLoading);
     const [dark, setDark] = useState(JSON.parse(localStorage.getItem('dark')) || false);
 
     useEffect(() => {
         setLoading(true);
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
             if (currentUser) {
-                //     axiosWithCredentials.post("/jwt", { email: currentUser.email })
-                //         .then(() => {
-                //             setUser(currentUser);
-                //             setLoading(false);
-                //         })
-                //         .catch(()=>{
-                //             setLoading(false);
-                //         })
-                setUser(currentUser);
-                setLoading(false);
-            }else {
+                const { uid, email, displayName } = currentUser;
+                axiosWithCredentials.post("/jwt", { uid, email, displayName })
+                    .then(() => {
+                        setUser(currentUser);
+                        setLoading(false);
+                    })
+            } else {
                 setLoading(false);
             }
         });
